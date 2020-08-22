@@ -86,16 +86,18 @@ void setup() {
 
 void startupDelay(int sDelay) {
     int pulseDelay = 100 ;
-    int numOfIndicators = 5 ;
+    int numOfIndicators = 4 ;
     
-    int numLoops = max(1,sDelay / (2 * 5 * pulseDelay))   ;
+    int numLoops = max(1,sDelay / (2 * numOfIndicators * pulseDelay))   ;
     for(int i = 0 ; i < numLoops ; i++) {
       
       pinToggle(STATUS_PIN,pulseDelay) ;
       pinToggle(ARMED_PIN,pulseDelay) ;
       pinToggle(MODE_INDICATOR_PIN,pulseDelay) ;
       pinToggle(MOTION_INDICATOR_PIN,pulseDelay) ;
-      pinToggle(PUMP_PIN,pulseDelay) ;
+     // pinToggle(PUMP_PIN,pulseDelay) ;
+      Serial.println(".") ;
+
     }
     
 }
